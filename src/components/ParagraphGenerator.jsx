@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ParagraphGenerator = ({ value, handleSubmit, setValue }) => {
+const ParagraphGenerator = ({ count, handleSubmit, setCount }) => {
   return (
     <form className="lorem-form" onSubmit={handleSubmit}>
       <label htmlFor="amount">paragraphs:</label>
@@ -11,9 +11,8 @@ const ParagraphGenerator = ({ value, handleSubmit, setValue }) => {
         min={1}
         step={1}
         max={9}
-        value={value}
-        defaultValue={1}
-        onChange={(e) => setValue(e.target.value)}
+        value={count}
+        onChange={(e) => setCount(e.target.value)}
       />
       <button className="btn" type="submit">
         generate

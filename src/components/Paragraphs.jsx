@@ -3,8 +3,8 @@ import React from 'react';
 const Paragraphs = ({ text }) => {
   return (
     <article className="lorem-text">
-      {text.map((item) => {
-        return <p key={item}>{item}</p>;
+      {text.map((item, index) => {
+        return <p key={index}>{item}</p>;
       })}
     </article>
   );

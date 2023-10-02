@@ -5,17 +5,23 @@ import text from './data';
 
 const App = () => {
   const [paragraphs, setParagraphs] = useState([]);
-  const [value, setValue] = useState(1);
+  const [count, setCount] = useState(1);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const textToDisplay = text.filter((_, index) => index < value);
+    let amount = parseInt(count);
+    const textToDisplay = text.slice(0, amount);
+    // const textToDisplay = text.filter((_, index) => index < count);
     setParagraphs(textToDisplay);
   };
   return (
     <section className="section-center">
       <h4>tired of boring lorem ipsum?</h4>
-      <ParagraphGenerator handleSubmit={handleSubmit} setValue={setValue} />
+      <ParagraphGenerator
+        handleSubmit={handleSubmit}
+        setCount={setCount}
+        count={count}
+      />
       <Paragraphs text={paragraphs} />
     </section>
   );
